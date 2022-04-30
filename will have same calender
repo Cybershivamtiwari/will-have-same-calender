@@ -1,0 +1,28 @@
+#same calender
+import math
+def nonleap(z):
+  s=0
+  for k in range(z,z+11):
+        p=int(k%4)
+        if p==1 or p==2 or p==3:
+            s=s+1
+            
+        else:
+            s=s+2
+        if(k+1)%4!=0:
+            if s==7 or s==14:
+                print(k+1, " will have same calender as",z)
+            
+z=int(input("enter the year in the format ZZZZ"))
+if z%4!=0:
+    nonleap(z)
+elif z%100==0:
+    if z%400==0:
+        print( (z+28),"will have same calender as",z )
+        
+    else:
+        nonleap(z)
+        
+else:
+      print( (z+28),"will have same calender as",z )
+    
